@@ -54,9 +54,10 @@ var (
 
 func init() {
 	var secret string
+	var exists bool
 
 	if len(os.Args) <= 1 {
-		secret, exists := os.LookupEnv("tnt2Secret")
+		secret, exists = os.LookupEnv("tnt2Secret")
 		if !exists {
 			// fmt.Fprintf(os.Stderr, "IsTerminal: %s\n", terminal.IsTerminal(int(os.Stdin.Fd())))
 			if terminal.IsTerminal(int(os.Stdin.Fd())) {
