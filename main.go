@@ -64,6 +64,7 @@ func init() {
 		turnOffLogging()
 	}
 
+	iCnt = big.NewInt(0)
 	proFormaMachine = *createProFormaMachine(proFormaFileName)
 }
 
